@@ -13,6 +13,7 @@ const productSchema = new Schema(
     enum: ["SOLD", "ONRETAIL", "ONRENT", "BOUGHT"],
     default: "ONRETAIL",
   },
+  owner: { type: Schema.Types.ObjectId, ref: 'User' }, 
   },
   {timestamps:true}
 );

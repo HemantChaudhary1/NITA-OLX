@@ -63,7 +63,7 @@ const userSchema = new Schema(
             ref: "Product", // Reference to the Product model
           },
           isAccepted : Boolean,
-          OTP : Integer,
+          OTP : {type:Number}
           
         },
       ],
