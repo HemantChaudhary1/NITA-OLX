@@ -29,7 +29,8 @@ const sellSchema = new Schema({
 const rentSchema = new Schema({
   product_ID: { type: Schema.Types.ObjectId, ref: 'Product' },
   user_ID: { type: Schema.Types.ObjectId, ref: 'User' },
-  rent: { type: Number }, // Duration in days, weeks, or months
+  rentDuration: { type: Number, required: true }, // Duration of rent
+  rentUnit: { type: String, enum: ['hourly', 'daily', 'weekly', 'monthly'], required: true }, // Unit of rent (hourly, daily, weekly, monthly)
   price: { type: Number },
   status: { type: String, enum: ['RENTED', 'AVAILABLE', 'CANCELLED'], default: 'AVAILABLE' }
 });
